@@ -1,1 +1,1 @@
-![](https://metrics.lecoq.io/insights/moten-07)
+![](https://metrics.lecoq.io/moten-07)
