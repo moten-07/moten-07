@@ -1,3 +1,3 @@
-[![](https://github-readme-stats.vercel.app/api?username=moten-07)](https://github.com/moten-07)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=moten-07&layout=compact&show_icons=true&theme=dark)](https://github.com/anuraghazra/github-readme-stats)
 
-<!-- ![](https://metrics.lecoq.io/moten-07) -->
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=moten-07&show_icons=true&theme=dark)](https://github.com/anuraghazra/github-readme-stats)
