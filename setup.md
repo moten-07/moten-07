@@ -4,7 +4,7 @@
 
 ### clean
 
-`gradle clean build`
+`gradle clean`
 
 * `/app`is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
