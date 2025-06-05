@@ -5,12 +5,15 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
-    alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.composeMultiplatform)
-    alias(libs.plugins.composeCompiler)
-    alias(libs.plugins.composeHotReload)
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.compose.multiplatform)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.compose.hotReload)
 }
+
+
+group = "io.github.moten"
 
 kotlin {
     androidTarget {
@@ -32,10 +35,10 @@ kotlin {
     }
     
     jvm("desktop")
-    
+
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
-        moduleName = "composeApp"
+        outputModuleName.set("composeApp")
         browser {
             val rootDirPath = project.rootDir.path
             val projectDirPath = project.projectDir.path
@@ -81,6 +84,7 @@ kotlin {
     }
 }
 
+
 android {
     namespace = "io.github.moten"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
@@ -91,6 +95,7 @@ android {
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
+        versionNameSuffix = "-艺术就是派大星"
     }
     packaging {
         resources {
@@ -112,14 +117,19 @@ dependencies {
     debugImplementation(compose.uiTooling)
 }
 
+
 compose.desktop {
     application {
         mainClass = "io.github.moten.MainKt"
-
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "io.github.moten"
+            targetFormats(
+                TargetFormat.Dmg,
+                TargetFormat.Exe,
+                TargetFormat.AppImage
+                )
+            packageName = "moten"
             packageVersion = "1.0.0"
+            println("outputBaseDir = ${outputBaseDir.asFile.get().path}")
         }
     }
 }

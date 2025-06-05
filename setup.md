@@ -10,9 +10,13 @@
   It contains several subfolders:
     - `commonMain` is for code that’s common for all targets.
     - `androidMain`
-        + install: `gradle -q :app:android:installDebug`
+        + Generate apk: `gradle -q :app:assembleRelease`
+        + Generate aab: `gradle -q :app:bundleRelease`
     - `desktopMain`
-        + run: `gradle -q :app:run -DmainClass=Main_desktopKt`
+        + run: `gradle -q :app:run`
+        + Generate AppImage: `gradle app:packageReleaseAppImage`
+        + Generate exe: `gradle app:packageReleaseExe`
+        + Generate dmg: `gradle app:packageReleaseDmg`
     - `wasmJsMain`
         + run:`gradle :app:wasmJsBrowserDevelopmentRun`
         + Generate artifacts: `gradle :app:wasmJsBrowserDistribution`
@@ -24,3 +28,9 @@
 * `/shared` is for the code that will be shared between all targets in the project.
   The most important subfolder is `commonMain`. If preferred, you can add code to the platform-specific folders here
   too.
+
+
+### Devlop
+
+1. remember: use in this @Composable
+2. viewModel: use in more @Composable
