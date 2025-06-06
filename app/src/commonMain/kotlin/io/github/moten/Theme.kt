@@ -13,11 +13,15 @@ import androidx.compose.ui.Modifier
 fun AppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     modifier: Modifier = Modifier,
+    topBar: @Composable () -> Unit = {},
+    bottomBar: @Composable () -> Unit = {},
     content: @Composable (PaddingValues) -> Unit
 ) = MaterialTheme(
     colorScheme = if (darkTheme) darkColorScheme() else lightColorScheme()
 ) {
     Scaffold(
+        topBar = topBar,
+        bottomBar = bottomBar,
         modifier = modifier,
         content = content
     )
