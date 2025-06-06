@@ -20,7 +20,9 @@ jobs:
           distribution: 'adopt'
 
       - name: Build project
-        run: ./gradlew :app:wasmJsBrowserDistribution
+        run: |
+            chmod +x ./gradlew
+            ./gradlew :app:wasmJsBrowserDistribution
 
       - name: Prepare for deployment
         run: |
