@@ -38,5 +38,5 @@ jobs:
           REPO_B_TOKEN: ${{ secrets.REPO_B_TOKEN }}
         run: |
           cd app/build/dist/wasmJs/productionExecutable
-          git remote add origin https://${REPO_B_TOKEN}@github.com//moten-07/moten-07.github.io.git
+          git remote add origin https://${REPO_B_TOKEN}@github.com/moten-07/moten-07.github.io.git
           git push -u origin master --force
