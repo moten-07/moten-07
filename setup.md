@@ -1,6 +1,7 @@
 ### update gradle version
 
-`gradle wrapper --gradle-version=8.14.1 --distribution-type=all`
+`gradle wrapper --gradle-version=8.14.2 --distribution-type=all`
+Tencent Mirror Image:`https\://services.gradle.org/distributions/gradle-8.14.2-bin.zip`
 
 ### clean
 
